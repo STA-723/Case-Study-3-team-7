@@ -13,12 +13,18 @@ Are first generation greek students at higher risk than their legacy student pee
 ## RESPONSE:
 Problem Drinking (variables - DRPROB*, DRNKDRIVE, BNGDRIVE or numprob):
 - Count Problem Behaviors
-
 - zero inflated poisson regression
-
 y ~ greek*firstgeneration + other covariates and potential confounders
 ?? Is the greek:firstgeneration interaction significant?
 ?? (If we have time) is the greek:firstgeneration interaction changing over time?
+
+
+GPA: 
+- same model (response not zero inflated poisson)
+?? Is the greek:firstgeneration interaction significant?
+?? (If we have time) is the greek:firstgeneration interaction changing over time?
+
+
 
 
 ## Confounding?
