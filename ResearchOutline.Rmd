@@ -1,0 +1,30 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Problem Drinking in Fraternities and Sororities: 
+
+First show (1) drinking and (2) problem drinking higher among students who have joined a fraternity or sorority
+
+Are first generation greek students at higher risk than their legacy student peers for developing *problem* drinking habits?
+
+
+## RESPONSE:
+Problem Drinking (variables - DRPROB*, DRNKDRIVE, BNGDRIVE or numprob):
+- Count Problem Behaviors
+
+- zero inflated poisson regression
+
+y ~ greek*firstgeneration + other covariates and potential confounders
+?? Is the greek:firstgeneration interaction significant?
+?? (If we have time) is the greek:firstgeneration interaction changing over time?
+
+
+## Confounding?
+It is well documented that first generation college students report higher stress, weaker social support networks in college
+
+The different social pressures on first-generation greek students could serve to exacerbate or diminish their risk of problem drinking
+
+Examine their risk in comparison to non-greek first generation students
+
