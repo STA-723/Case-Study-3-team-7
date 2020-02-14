@@ -64,7 +64,7 @@ BETA <- NULL
 
 ## Starting Values for Gibbs Sampling
 Z <- 6*(rank(Y) - mean(rank(Y)))/n
-beta <- rep(0,3) # Gender, Vocab, and Gender.Vocab
+beta <- rep(0,3) # First.Gen, Greek, and First.Gen:Greek
 
 ## Sample
 for(s in 1:S){
