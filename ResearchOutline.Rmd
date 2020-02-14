@@ -24,13 +24,13 @@ GPA:
 ?? Is the greek:firstgeneration interaction significant?
 ?? (If we have time) is the greek:firstgeneration interaction changing over time?
 
-
-
-
 ## Confounding?
 It is well documented that first generation college students report higher stress, weaker social support networks in college
 
 The different social pressures on first-generation greek students could serve to exacerbate or diminish their risk of problem drinking
 
 Examine their risk in comparison to non-greek first generation students
+
+## Adjust for... (ZIP results)
+age A1, gender A2, year in school A3, greek A8, religious reason C1_B, ever used drug before E1_, race G3, father drinking G11_, father college G14
 
