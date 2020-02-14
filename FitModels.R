@@ -15,7 +15,9 @@ summary(X)
 drink_problems <- dat[,c(paste0("DRPROB", c("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N")))]
 M <- ncol(drink_problems) # number of drinking problems
 
-GPA <- factor(dat$F4, levels = 1:9, labels = c("A", "A-", "B+", "B", "B-", "C+", "C", "C-", "D"))
+GPA <- factor(dat$F4, levels = seq(9,1, by = -1), 
+              labels = c("D", "C-", "C", "C+", "B-", "B", "B+", "A-", "A"),
+              ordered = TRUE)
 
 ## REMOVE MISSING VALUES FOR NOW
 YYX <- cbind(drink_problems,GPA,X)
@@ -42,6 +44,8 @@ X <- model.matrix(~First.Gen*Greek, data = X)
 drink_prob_model <- jags.model(textConnection(drink_prob_model_string), 
                     data = list(X=X, Y=drink_problems, N=nrow(drink_problems), p=ncol(X), M=ncol(drink_problems), K=2))
 
+samp <- coda.samples(model, variable.names=c("beta", "xi"), n.iter=300)
+summary(samp)
 
 ## --- Academic Performance Model ---
 ## Rank Regression Model
@@ -56,7 +60,7 @@ g <- n # For Zellner g-prior
 
 
 ## GIBBS SAMPLING ROUTINE
-S <- 1000 # number of simulations
+S <- 100 # number of simulations
 
 ## Data Storage
 # Don't need to store samples of Z
@@ -90,3 +94,4 @@ for(s in 1:S){
   
   BETA <- rbind(BETA, t(beta))
 }
+colMeans(BETA) # Mean Coefficients (Positive indicates improved GPA)
