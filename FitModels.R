@@ -44,7 +44,7 @@ X <- model.matrix(~First.Gen*Greek, data = X)
 drink_prob_model <- jags.model(textConnection(drink_prob_model_string), 
                     data = list(X=X, Y=drink_problems, N=nrow(drink_problems), p=ncol(X), M=ncol(drink_problems), K=2))
 
-samp <- coda.samples(model, variable.names=c("beta", "xi"), n.iter=300)
+samp <- coda.samples(drink_prob_model, variable.names=c("beta", "xi"), n.iter=300)
 summary(samp)
 
 ## --- Academic Performance Model ---
